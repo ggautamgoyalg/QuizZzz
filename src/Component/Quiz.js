@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../styles/Quiz.css"
 
 export class Quiz extends Component {
   constructor() {
@@ -95,7 +96,6 @@ export class Quiz extends Component {
       this.props.answer[this.props.indx] = 0;
     }
   };
-
   render() {
     let {
       indx,
@@ -109,21 +109,21 @@ export class Quiz extends Component {
     return (
       <>
         <div className="my-5">
-          <div className="container bg-secondary ">
-            <div className="row justify-content-center bg-light my-3 py-4">
+          <div className="container quizInnerContainer">
+            <div className="row bg-light my-3 py-4 questionContainer">
               <div className="col">
                 {indx + 1}. {question}
               </div>
             </div>
             <div className="row justify-content-center  mt-4 mb-3">
               <div
-                className={` col mx-3 bg-${this.state.background1} py-2 `}
+                className={` col mx-3 answerContainerBackground-${this.state.background1} py-2 answerContainer`}
                 onClick={this.changeBackground1}
               >
                 {correct_answer}
               </div>
               <div
-                className={` col mx-3 bg-${this.state.background2} py-2 `}
+                className={` col mx-3 answerContainerBackground-${this.state.background2} py-2 answerContainer`}
                 onClick={this.changeBackground2}
               >
                 {incorrect_answers1}
@@ -132,13 +132,13 @@ export class Quiz extends Component {
 
             <div className="row justify-content-center  my-3 ">
               <div
-                className={` col mx-3 bg-${this.state.background3} py-2 `}
+                className={` col mx-3 answerContainerBackground-${this.state.background3} py-2 answerContainer`}
                 onClick={this.changeBackground3}
               >
                 {incorrect_answers2}
               </div>
               <div
-                className={` col mx-3 bg-${this.state.background4} py-2 `}
+                className={` col mx-3 answerContainerBackground-${this.state.background4} py-2 answerContainer`}
                 onClick={this.changeBackground4}
               >
                 {incorrect_answers3}

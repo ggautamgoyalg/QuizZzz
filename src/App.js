@@ -1,5 +1,6 @@
 
-// import './App.css';
+import './styles/stary.css';
+
 import Mainpage from './Component/Mainpage';
 
 

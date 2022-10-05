@@ -1,0 +1,25 @@
+@media only screen and (min-width: 425px) {
+    .footerCss {
+      position: relative;
+      top: 7vh;
+      right: 0px;
+      left: 0px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .footerCss {
+      position: relative;
+      top: 7vh;
+      right: 0px;
+      left: 0px;
+    }
+}
+@media only screen and (min-width: 1440px) {
+    .footerCss {
+      position: relative;
+      top: 15vh;
+      right: 0px;
+      left: 0px;
+    }
+}
