@@ -54,12 +54,12 @@ export class Mainpage extends Component {
     return (
       <>
      
-      {this.state.loading === true && <LoadingSpinner />}
+    
 
         <div className="d-flex justify-content-center py-3 my-4 h1" style={{color:"burlywood"}}>
           Welcome to Quiz Zeela
         </div>
-      
+        {this.state.loading === true && <LoadingSpinner />}
         <div className="text-black">{(i = -1)}</div>
         <div className="row" style={{margin:"2px"}}>
           {this.state.questions.map((element, index) => {
