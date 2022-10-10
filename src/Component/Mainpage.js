@@ -44,24 +44,22 @@ export class Mainpage extends Component {
         display: 1,
       });
     } else {
-
       alert("attempt all the questions ");
     }
-   
   };
 
   render() {
     return (
       <>
-     
-    
-
-        <div className="d-flex justify-content-center py-3 my-4 h1" style={{color:"burlywood"}}>
+        <div
+          className="d-flex justify-content-center py-3 my-4 h1"
+          style={{ color: "burlywood" }}
+        >
           Welcome to Quiz Zeela
         </div>
         {this.state.loading === true && <LoadingSpinner />}
         <div className="text-black">{(i = -1)}</div>
-        <div className="row" style={{margin:"2px"}}>
+        <div className="row" style={{ margin: "2px" }}>
           {this.state.questions.map((element, index) => {
             i++;
 
@@ -75,29 +73,30 @@ export class Mainpage extends Component {
                   incorrect_answers2={element.incorrect_answers[1]}
                   incorrect_answers3={element.incorrect_answers[2]}
                   answer={answer}
-                  />
+                />
               </div>
             );
           })}
         </div>
 
         <div>
-          <div className="d-flex justify-content-center">
-            <button
-              onClick={this.btnClicked}
-              disabled={this.state.attempted < 10}
+          {!this.state.loading === true && (
+            <div className="d-flex justify-content-center">
+              <button
+                onClick={this.btnClicked}
+                disabled={this.state.attempted < 10}
               >
-              Submit
-            </button>
-          </div>
-
+                Submit
+              </button>
+            </div>
+          )}
           {this.state.display === 1 && <PrintScore score={TotalScore} />}
 
           <div className="text-black">{(i = 0)}</div>
           {this.state.display === 1 &&
             this.state.questions.map((element, index) => {
               i++;
-              
+
               return (
                 <div key={index}>
                   <Submitted indx={i} answer={element.correct_answer} />
@@ -107,7 +106,6 @@ export class Mainpage extends Component {
         </div>
 
         <Footer />
-        
       </>
     );
   }
